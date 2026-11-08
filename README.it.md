@@ -10,7 +10,7 @@ npx controlla-sito www.esempio.it         # italiano
 npx site-checkup www.example.com          # English
 ```
 
-Sono lo stesso strumento; installato con `npm i -g controlla-sito` si usa anche con la scorciatoia `f24`.
+Sono lo stesso strumento. Fa parte anche della CLI di Formato24: `f24 check www.esempio.it`.
 
 ## Cosa controlla che un test di velocità non vede
 

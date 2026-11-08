@@ -37,8 +37,8 @@ function aiuto() {
   const r = (a: string, b: string) => `  ${pc.cyan(a.padEnd(26))}${pc.gray(b)}`;
   console.log(`${intestazioneCli(VERSIONE)}
 ${pc.bold(T("Uso", "Usage"))}
-  ${pc.bold("f24")} ${pc.cyan("<sito>")} ${pc.gray(T("[opzioni]", "[options]"))}       ${pc.gray(T("oppure", "or"))} npx controlla-sito <sito>
-  ${pc.bold("f24 ai")}                     ${pc.gray(T("collega il provider AI", "connect the AI provider"))}
+  ${pc.bold("f24 check")} ${pc.cyan("<sito>")} ${pc.gray(T("[opzioni]", "[options]"))}  ${pc.gray(T("oppure", "or"))} controlla-sito <sito>
+  ${pc.bold("f24 ai")}                    ${pc.gray(T("collega il provider AI", "connect the AI provider"))}
 
 ${pc.bold(T("Opzioni", "Options"))}
 ${r("-l, --lang it|en", T("lingua del rapporto", "report language"))}
@@ -52,9 +52,9 @@ ${r("--sensitive", T("cerca .git/.env esposti, solo su siti tuoi", "look for exp
 ${r("--no-ai", T("salta l'analisi AI", "skip the AI review"))}
 
 ${pc.bold(T("Esempi", "Examples"))}
-  ${pc.gray("$")} f24 www.esempio.it
-  ${pc.gray("$")} f24 esempio.it --full --md rapporto.md
-  ${pc.gray("$")} OPENAI_API_KEY=… f24 esempio.it --lang en --min 80
+  ${pc.gray("$")} f24 check www.esempio.it
+  ${pc.gray("$")} f24 check esempio.it --full --md rapporto.md
+  ${pc.gray("$")} OPENAI_API_KEY=… f24 check esempio.it --lang en --min 80
 `);
 }
 
@@ -98,7 +98,7 @@ async function main() {
     console.log(intestazioneCli(VERSIONE));
     p.intro(pc.bgMagenta(pc.white(pc.bold(` ${T("Collega l'AI", "Connect the AI")} `))));
     const ok = await configuraAI();
-    p.outro(ok ? T("Pronto. Prova: f24 www.esempio.it", "Ready. Try: f24 www.example.com") : T("Nessuna modifica.", "Nothing changed."));
+    p.outro(ok ? T("Pronto. Prova: f24 check www.esempio.it", "Ready. Try: f24 check www.example.com") : T("Nessuna modifica.", "Nothing changed."));
     return;
   }
 

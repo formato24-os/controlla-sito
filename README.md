@@ -10,7 +10,7 @@ npx site-checkup www.example.com          # English
 npx controlla-sito www.esempio.it         # Italiano
 ```
 
-Both commands are the same tool; `f24` is a short alias once installed globally (`npm i -g controlla-sito`).
+Both commands are the same tool. It is also part of the Formato24 CLI: `f24 check www.example.com`.
 
 ## What it checks that a speed test does not
 
