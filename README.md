@@ -1,4 +1,4 @@
-# site-checkup · controlla-sito
+# controlla-sito (site-checkup)
 
 **A full website check-up from your terminal, with an AI review on your own key.**
 Security, privacy & GDPR, Google, visibility in AI assistants, performance, accessibility, contact options, domain and email — 60+ checks in a few seconds, explained in plain words with the fix next to each problem.
@@ -6,8 +6,8 @@ Security, privacy & GDPR, Google, visibility in AI assistants, performance, acce
 [🇮🇹 Leggi in italiano](README.it.md) · Made by [Formato24](https://www.formato24.com)
 
 ```bash
-npx site-checkup www.example.com          # English
-npx controlla-sito www.esempio.it         # Italiano
+npx controlla-sito www.example.com --lang en   # English
+npx controlla-sito www.esempio.it              # Italiano
 ```
 
 Both commands are the same tool. It is also part of the Formato24 CLI: `f24 check www.example.com`.
@@ -29,7 +29,7 @@ Then an **AI model reads the page like a first-time customer**: is it clear what
 
 ## The AI part: bring your own key
 
-The AI review runs on **your** account with any of these providers. The first time, `site-checkup ai` asks for the key, tests it and stores it in `~/.config/controlla-sito/config.json` (readable only by you). Environment variables always win, which is how CI passes them.
+The AI review runs on **your** account with any of these providers. The first time, `npx controlla-sito ai` asks for the key, tests it and stores it in `~/.config/controlla-sito/config.json` (readable only by you). Environment variables always win, which is how CI passes them.
 
 | Provider | Variable | Model used by default |
 |---|---|---|
@@ -72,7 +72,7 @@ jobs:
     steps:
       - uses: actions/setup-node@v4
         with: { node-version: 22 }
-      - run: npx --yes site-checkup@1 https://www.example.com --min 80 --md report.md
+      - run: npx --yes controlla-sito@1 https://www.example.com --min 80 --md report.md
         env: { OPENAI_API_KEY: "${{ secrets.OPENAI_API_KEY }}" }
       - run: cat report.md >> "$GITHUB_STEP_SUMMARY"
         if: always()

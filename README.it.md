@@ -1,4 +1,4 @@
-# controlla-sito · site-checkup
+# controlla-sito (site-checkup)
 
 **Il check-up completo di un sito dal terminale, con il parere di un'AI sulla tua chiave.**
 Sicurezza, privacy e GDPR, Google, visibilità sulle AI, velocità, accessibilità, contatti, dominio ed email: più di 60 controlli in pochi secondi, spiegati in parole semplici e con la soluzione accanto a ogni problema.
@@ -6,8 +6,8 @@ Sicurezza, privacy e GDPR, Google, visibilità sulle AI, velocità, accessibilit
 [🇬🇧 Read in English](README.md) · Fatto da [Formato24](https://www.formato24.com)
 
 ```bash
-npx controlla-sito www.esempio.it         # italiano
-npx site-checkup www.example.com          # English
+npx controlla-sito www.esempio.it              # italiano
+npx controlla-sito www.example.com --lang en   # English
 ```
 
 Sono lo stesso strumento. Fa parte anche della CLI di Formato24: `f24 check www.esempio.it`.
