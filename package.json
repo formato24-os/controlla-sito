@@ -1,0 +1,69 @@
+{
+  "name": "controlla-sito",
+  "version": "1.0.0",
+  "description": "Check-up completo di un sito dal terminale: sicurezza, privacy e GDPR, Google, visibilità sulle AI, velocità, accessibilità, email e dominio, più il parere di un'AI con la tua chiave. Also in English as site-checkup.",
+  "keywords": [
+    "seo",
+    "audit",
+    "gdpr",
+    "cookie",
+    "privacy",
+    "accessibility",
+    "website",
+    "checkup",
+    "cli",
+    "ai",
+    "llm",
+    "dmarc",
+    "spf",
+    "lighthouse",
+    "italia"
+  ],
+  "homepage": "https://github.com/formato24-os/controlla-sito#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/formato24-os/controlla-sito.git"
+  },
+  "bugs": "https://github.com/formato24-os/controlla-sito/issues",
+  "author": "Formato24 <info@formato24.com> (https://www.formato24.com)",
+  "license": "Apache-2.0",
+  "type": "module",
+  "bin": {
+    "controlla-sito": "dist/cli.js",
+    "site-checkup": "dist/cli.js",
+    "f24": "dist/cli.js"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "NOTICE",
+    "README.it.md"
+  ],
+  "engines": {
+    "node": ">=20.12"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "npm run build && node --test test/*.test.mjs",
+    "prepublishOnly": "npm test"
+  },
+  "devDependencies": {
+    "@types/node": "24.10.1",
+    "typescript": "5.9.3"
+  },
+  "dependencies": {
+    "@clack/prompts": "1.8.1",
+    "boxen": "9.0.0",
+    "cfonts": "3.3.1",
+    "gradient-string": "3.0.0",
+    "picocolors": "1.1.1"
+  }
+}
